@@ -29,7 +29,7 @@ const options = {
     },
     servers: [
       {
-        url: "http",
+        url: "https://inbilloapp.herokuapp.com/",
       },
     ],
   },
