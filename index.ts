@@ -30,10 +30,6 @@ const options = {
   apis: ["./routes/*.js"],
 };
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
-});
 const specs = swaggerJsDoc(options);
 
 app.use("/", swaggerUI.serve, swaggerUI.setup(specs));
