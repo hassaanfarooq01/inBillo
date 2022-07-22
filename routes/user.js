@@ -100,7 +100,7 @@ router.get("/:id", async (req, res) => {
     const { id } = req.params;
     const user = await User.findOne({ where: { id } });
     if (!user) {
-      return res.json({ msg: "Can not find existing record" });
+      return res.json({ msg: "Can not find any record" });
     }
     return res.json(user);
   } catch (e) {
@@ -138,7 +138,11 @@ router.post("/", async (req, res) => {
     return res.json({ msg: "Successfully create user" });
   } catch (e) {
     console.log(e);
-    return res.json({ msg: "Fail to create", status: 500, route: "/put" });
+    return res.json({
+      msg: "Fail to create and id must be unique.",
+      status: 500,
+      route: "/put",
+    });
   }
 });
 
@@ -180,7 +184,7 @@ router.put("/:id", async (req, res) => {
     const { id } = req.params;
     const user = await User.findOne({ where: { id } });
     if (!user) {
-      return res.json({ msg: "Can not find existing record" });
+      return res.json({ msg: "Can not find any record" });
     }
     const updatedUser = await user.update(req.body, { where: { id } });
     return res.json({ user: updatedUser, msg: "User updated successfully" });
@@ -220,7 +224,7 @@ router.delete("/:id", async (req, res) => {
     const { id } = req.params;
     const user = await User.findOne({ where: { id } });
     if (!user) {
-      return res.json({ msg: "Can not find existing record" });
+      return res.json({ msg: "Can not find any record" });
     }
     const deletedUser = await user.destroy();
     return res.json({ user: deletedUser });

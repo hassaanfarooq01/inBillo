@@ -106,7 +106,7 @@ router.get("/:id", async (req, res) => {
     const { id } = req.params;
     const transaction = await Transaction.findOne({ where: { id } });
     if (!transaction) {
-      return res.json({ msg: "Can not find existing record" });
+      return res.json({ msg: "Can not find any record" });
     }
     return res.json(transaction);
   } catch (e) {
@@ -173,7 +173,11 @@ router.post("/", async (req, res) => {
     }
   } catch (e) {
     console.log(e);
-    return res.json({ msg: "Fail to create", status: 500, route: "/put" });
+    return res.json({
+      msg: "Fail to create and id must be unique.",
+      status: 500,
+      route: "/put",
+    });
   }
 });
 
@@ -203,7 +207,7 @@ router.delete("/:id", async (req, res) => {
     const { id } = req.params;
     const transaction = await Transaction.findOne({ where: { id } });
     if (!transaction) {
-      return res.json({ msg: "Can not find existing record" });
+      return res.json({ msg: "Can not find any record" });
     }
     const deletedTransaction = await transaction.destroy();
     return res.json({ transaction: deletedTransaction });
