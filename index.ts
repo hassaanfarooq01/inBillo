@@ -51,8 +51,8 @@ app.use("/accounts", accountsRouter);
 app.use("/transactions", transactionsRouter);
 
 models.sequelize.sync({ force: true }).then(() => {
-  app.listen(4000, () => {
-    console.log("App is running on 4000");
+  app.listen(PORT, () => {
+    console.log(`App is running on ${PORT}`);
   });
   console.log("db is created");
 });
