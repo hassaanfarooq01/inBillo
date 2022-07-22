@@ -1,0 +1,104 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "user1",
+      "email": "abcd@gmail.com",
+      "password": "asdf_adsf"
+    },
+    {
+      "id": "2",
+      "username": "user2",
+      "email": "ab2@gmail.com",
+      "password": "asdf_adsf"
+    },
+    {
+      "id": "3",
+      "username": "user3",
+      "email": "abcd3@gmail.com",
+      "password": "asdf_adsf"
+    },
+    {
+      "id": 4,
+      "username": "user4",
+      "email": "abcd4@gmail.com",
+      "password": "asdf_adsf"
+    },
+    {
+      "id": 5,
+      "username": "user5",
+      "email": "abcd5@gmail.com",
+      "password": "asdf_adsf"
+    }
+  ],
+  "accounts": [
+    {
+      "id": 1,
+      "userId": 2,
+      "balance": 34234,
+      "last-updated": "20-02-2020"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "balance": 14234,
+      "last-updated": "20-02-2020"
+    },
+    {
+      "id": 3,
+      "userId": 4,
+      "balance": 1424,
+      "last-updated": "20-02-2020"
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "balance": 14242,
+      "last-updated": "20-02-2020"
+    },
+    {
+      "id": 5,
+      "userId": 2,
+      "balance": 14242,
+      "last-updated": "20-02-2020"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "senderId": 2,
+      "receiver": 1,
+      "amount": 234,
+      "last-updated": "20-02-2020"
+    },
+    {
+      "id": 2,
+      "senderId": 3,
+      "receiver": 2,
+      "amount": 2342,
+      "last-updated": "20-02-2020"
+    },
+    {
+      "id": 3,
+      "senderId": 1,
+      "receiver": 2,
+      "amount": 2343,
+      "last-updated": "20-02-2020"
+    },
+    {
+      "id": 4,
+      "senderId": 5,
+      "receiver": 1,
+      "amount": 2343,
+      "last-updated": "20-02-2020"
+    },
+    {
+      "id": 5,
+      "senderId": 1,
+      "receiver": 4,
+      "amount": 2000,
+      "last-updated": "20-02-2020"
+    }
+  ],
+  "books": []
+}
