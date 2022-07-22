@@ -12,12 +12,6 @@ const transactionsRouter = require("./routes/transactions");
 const PORT = process.env.PORT || 4000;
 
 const app = express();
-const FileSync = require("lowdb/adapters/FileSync");
-
-const adapter = new FileSync("db.json");
-const db = low(adapter);
-
-db.defaults({ users: [], accounts: [], transactions: [] }).write();
 
 const options = {
   definition: {
@@ -29,7 +23,7 @@ const options = {
     },
     servers: [
       {
-        url: "https://inbilloapp.herokuapp.com/",
+        url: "http://localhost:4000",
       },
     ],
   },
@@ -39,8 +33,6 @@ const options = {
 const specs = swaggerJsDoc(options);
 
 app.use("/", swaggerUI.serve, swaggerUI.setup(specs));
-
-app.db = db;
 
 app.use(cors());
 app.use(express.json());

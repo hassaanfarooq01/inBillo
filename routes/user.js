@@ -50,7 +50,7 @@ const User = models.default.User;
  *       200:
  *         description: The list of the users
  *         content:
- *           json:
+ *           application/json:
  *             schema:
  *               type: array
  *               items:
