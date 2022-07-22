@@ -139,7 +139,7 @@ router.post("/", async (req, res) => {
   } catch (e) {
     console.log(e);
     return res.json({
-      msg: "Fail to create and id must be unique.",
+      msg: "Fail to create and id and username must be unique.",
       status: 500,
       route: "/put",
     });
